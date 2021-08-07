@@ -1,11 +1,10 @@
-//start the game position is 0
-let readline = require("readline-sync");
-let n = readline.question("Enter the  position: ");
-function position(n){
-    if(n == 0)
-    console.log("start the game");
+class Player{
+    constructor(position,dice)
+    {
+        this.position = position;
+        this.dice = dice;
+    }
 }
-console.log(position(n));
-//roll the die between 1 to 6
-let Dice=Math.floor(Math.random()*7);
-console.log("Dice number : "+Dice);
+let game = new Player(0 ,Math.floor(Math.random()*7) );
+console.log(game ) ;
+console.log("start game");
