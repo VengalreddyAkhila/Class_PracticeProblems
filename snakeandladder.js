@@ -6,3 +6,6 @@ function position(n){
     console.log("start the game");
 }
 console.log(position(n));
+//roll the die between 1 to 6
+let Dice=Math.floor(Math.random()*7);
+console.log("Dice number : "+Dice);
