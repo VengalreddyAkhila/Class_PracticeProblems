@@ -1,43 +1,46 @@
 class Game{
-    constructor(position,dice)
+    constructor(position,dice,dicerolling)
     {
         this.position = position;
         this.dice = dice;
+        this.dicerolling = dicerolling;
     }
 }
 
-let Player = new Game(0 ,0);
-console.log(Player) ;
+let Player1 = new Game(0 ,0 , 0);
+console.log(Player1) ;
 console.log("start game");
-while (Player.position != 100)
+while (Player1.position != 100)
 {
-    Player.dice = Math.floor(Math.random()*7);
+    Player1.dice = Math.floor(Math.random()*7);
     let choice = Math.floor(Math.random()*3);
     switch(choice)
     {
             case 0:  
-            if(Player.position + Player.dice <= 100)
+            if(Player1.position + Player1.dice <= 100)
             {
-                Player.position += Player.dice;
-                console.log("got ladder: " +Player.position);
+                Player1.position += Player1.dice;
+                console.log("got ladder: " +Player1.position);
             }
             else
-            Player.position += 0;
+            Player1.position += 0;
                 break;
             case 1:
-                Player.position -= Player.dice;
-                console.log("snake attack: " +Player.position);
-                if(Player.position <= 0)
+                Player1.position -= Player1.dice;
+                console.log("snake attack: " +Player1.position);
+                if(Player1.position <= 0)
                 {
-                Player.position = 0;
+                Player1.position = 0;
                 }
                 break;
             default:
                 console.log("No play");
                 break;
     }
-    console.log("current position:" +Player.position);
+    console.log("current position:" +Player1.position);
+    Player1.dicerolling += 1;
 }
-console.log("winning position: " +Player.position);
+console.log("die rolling number: " +Player1.dicerolling);
+console.log("winning position: " +Player1.position);
 
         
