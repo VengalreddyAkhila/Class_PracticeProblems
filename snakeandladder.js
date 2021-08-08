@@ -16,8 +16,13 @@ while (Player.position != 100)
     switch(choice)
     {
             case 0:  
+            if(Player.position + Player.dice <= 100)
+            {
                 Player.position += Player.dice;
                 console.log("got ladder: " +Player.position);
+            }
+            else
+            Player.position += 0;
                 break;
             case 1:
                 Player.position -= Player.dice;
